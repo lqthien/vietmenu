@@ -4,4 +4,5 @@ class FoodCategory < ActiveRecord::Base
   validates :name, presence: true, uniqueness: true
 
   belongs_to :food_main_category
+  has_and_belongs_to_many :dishes
 end

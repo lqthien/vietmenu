@@ -3,4 +3,6 @@ class Dish < ActiveRecord::Base
 
   validates :name, :short_description, presence: true
   validates :name, uniqueness: true
+
+  has_and_belongs_to_many :food_categories
 end
