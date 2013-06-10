@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130610130538) do
+ActiveRecord::Schema.define(:version => 20130610141143) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -52,6 +52,53 @@ ActiveRecord::Schema.define(:version => 20130610130538) do
     t.text     "description"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
+  end
+
+  create_table "food_categories", :force => true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.integer  "food_main_category_id"
+    t.datetime "created_at",            :null => false
+    t.datetime "updated_at",            :null => false
+  end
+
+  create_table "food_main_categories", :force => true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "menu_items", :force => true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.string   "note"
+    t.integer  "menu_id"
+    t.float    "vn_price"
+    t.float    "us_price"
+    t.string   "other_price"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "menus", :force => true do |t|
+    t.integer  "restaurant_id"
+    t.string   "name"
+    t.string   "description"
+    t.string   "notes"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  create_table "restaurants", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "name"
+    t.text     "description"
+    t.string   "address"
+    t.string   "city"
+    t.string   "notes"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "taggings", :force => true do |t|
