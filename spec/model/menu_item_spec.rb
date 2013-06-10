@@ -5,6 +5,7 @@ describe MenuItem do
   it { should validate_presence_of(:description) }
   it { should validate_presence_of(:menu_id) }
   it { should validate_presence_of(:vn_price) }
+  it { should validate_presence_of(:dish_id) }
   it { should validate_numericality_of(:vn_price) }
   it { should validate_numericality_of(:us_price) }
 
@@ -15,4 +16,7 @@ describe MenuItem do
 
   it { should_not allow_value(-1).for(:vn_price) }
   it { should_not allow_value(-1).for(:us_price) }
+
+  it { should belong_to(:menu) }
+  it { should belong_to(:dish) }
 end
