@@ -1,0 +1,66 @@
+body {
+  width: 920px;
+  min-height: 1000px;
+  margin: 0px auto;
+  box-shadow: 0 0px 10px 1px #ccc;
+
+  #flash-messages {
+    .flash {
+      padding: 5px;
+      text-align: center;
+
+      &.flash-notice {
+        background: #dff0d8;
+        color: #468847;
+      }
+
+      &.flash-alert {
+        background: #f2dede;
+        color: #b94a48;
+      }
+    }
+  }
+
+  #header {
+    height: 60px;
+    border-bottom: 10px #EEE solid;
+
+    #logo {
+      width: 150px;
+      height: 100%;
+      margin-right: 20px;
+      float: left;
+    }
+
+    #header-nav {
+      float: left;
+
+      .header-nav-item {
+        float: left;
+        padding: 20px;
+
+        > a {
+          color: #666;
+          font-size: 19px;
+        }
+
+        &:hover, &:active {
+          background: #0088cc;
+
+          > a {
+            color: white;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+
+  #main {
+    padding: 10px;
+  }
+
+  #footer {
+
+  }
+}

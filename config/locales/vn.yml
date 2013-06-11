@@ -1,0 +1,12 @@
+vn:
+  navigation:
+    home:
+      home: 'Trang chu'
+      restaurants: 'Nha hang'
+      dishes: 'Mon an'
+      about: 'Gioi thieu'
+      account: 'Tai khoan'
+      register: 'Dang ky'
+      login: 'Dang nhap'
+      my_account: 'Ca nhan'
+      logout: 'Dang xuat'
