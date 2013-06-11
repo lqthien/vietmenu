@@ -123,8 +123,7 @@ ActiveAdmin.setup do |config|
   # You can add before, after and around filters to all of your
   # Active Admin resources and pages from here.
   #
-  # config.before_filter :do_something_awesome
-
+  config.before_filter :set_activeadmin_locale
 
   # == Register Stylesheets & Javascripts
   #
@@ -154,9 +153,9 @@ ActiveAdmin.setup do |config|
   # == Menu System
   #
   # You can add a navigation menu to be used in your application, or configure a provided menu
-  # 
+  #
   # To change the default utility navigation to show a link to your website & a logout btn
-  # 
+  #
   #   config.namespace :admin do |admin|
   #     admin.build_menu :utility_navigation do |menu|
   #       menu.add label: "My Great Website", url: "http://www.mygreatwebsite.com", html_options: { target: :blank }
@@ -200,11 +199,23 @@ ActiveAdmin.setup do |config|
 
   # == Filters
   #
-  # By default the index screen includes a “Filters” sidebar on the right 
+  # By default the index screen includes a “Filters” sidebar on the right
   # hand side with a filter for each attribute of the registered model.
   # You can enable or disable them for all resources here.
   #
   # config.filters = true
 
 
+end
+
+module ActiveAdmin
+  module Devise
+    class SessionsController < ::Devise::SessionsController
+      before_filter :set_activeadmin_locale
+
+      def set_activeadmin_locale
+        I18n.locale = 'en'
+      end
+    end
+  end
 end
