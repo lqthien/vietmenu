@@ -1,6 +1,15 @@
 - if notice || alert
   #flash-messages
     - if notice
-      .flash.flash-notice= notice
+      .flash.flash-notice
+        = notice
+        %a.close.icon-remove
     - if alert
-      .flash.flash-alert= alert
+      .flash.flash-alert
+        = alert
+        %a.close.icon-remove
+
+:coffeescript
+  $('body').on 'click', '.flash .close', ->
+    $(this).parents('.flash').fadeOut ->
+      $(this).remove()

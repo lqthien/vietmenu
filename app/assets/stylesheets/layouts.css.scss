@@ -4,24 +4,6 @@ body {
   .main {
     width: 920px;
     margin: 0px auto;
-    box-shadow: 0 0px 10px 1px #ccc;
-  }
-
-  #flash-messages {
-    .flash {
-      padding: 5px;
-      text-align: center;
-
-      &.flash-notice {
-        background: #dff0d8;
-        color: #468847;
-      }
-
-      &.flash-alert {
-        background: #f2dede;
-        color: #b94a48;
-      }
-    }
   }
 
   #header {
@@ -86,10 +68,40 @@ body {
 
   #main {
     padding: 10px;
-    min-height: 1000px;
+    box-shadow: 0 -5px 5px 0px #ccc;
+
+    #main-content {
+      margin-top: 60px;
+      min-height: 1000px;
+
+      #flash-messages {
+        .flash {
+          padding: 5px;
+          text-align: center;
+          border-radius: 5px;
+
+          &.flash-notice {
+            background: #dff0d8;
+            color: #468847;
+          }
+
+          &.flash-alert {
+            background: #f2dede;
+            color: #b94a48;
+          }
+        }
+      }
+    }
   }
 
   #footer {
+    height: 40px;
+    border-top: 1px solid #DDD;
 
+    .main {
+      padding-top: 15px;
+      text-align: center;
+      font-weight: bold;
+    }
   }
 }
