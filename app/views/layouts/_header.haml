@@ -9,7 +9,7 @@
       .header-nav-item= link_to t('navigation.home.dishes'), '#'
       .header-nav-item= link_to t('navigation.home.about'), '#'
       .header-nav-item.dropdown
-        = link_to t('navigation.home.account'), '#', id: 'header-account-menu', class: 'dropdown-toggle', 'data-toggle' => "dropdown"
+        = link_to account_menu, '#', id: 'header-account-menu', class: 'dropdown-toggle', 'data-toggle' => "dropdown"
         %b.caret
         %ul.dropdown-menu{"aria-labelledby" => "header-account-menu", role: "menu"}
           - if user_signed_in?

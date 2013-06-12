@@ -12,6 +12,7 @@ body {
     height: 60px;
     background: #45aeea;
     background-image: linear-gradient(to bottom,#54b4eb,#2fa4e7);
+    box-shadow: 0 0px 10px 3px #45aeea;
 
     #logo {
       width: 150px;
@@ -21,7 +22,7 @@ body {
       color: white;
       font-size: 35px;
       text-shadow: 1px 1px 0 rgba(0,0,0,0.3);
-      padding-top: 18px;
+      padding: 18px 0px 0px 10px;
       font-weight: bold;
     }
 
@@ -68,11 +69,11 @@ body {
 
   #main {
     padding: 10px;
-    box-shadow: 0 -5px 5px 0px #ccc;
+    box-shadow: 0 1px 5px 0px #ccc;
 
     #main-content {
       margin-top: 60px;
-      min-height: 1000px;
+      min-height: 600px;
 
       #flash-messages {
         .flash {
