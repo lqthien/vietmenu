@@ -1,8 +1,11 @@
 body {
-  width: 920px;
-  min-height: 1000px;
-  margin: 0px auto;
-  box-shadow: 0 0px 10px 1px #ccc;
+  color: #666;
+
+  .main {
+    width: 920px;
+    margin: 0px auto;
+    box-shadow: 0 0px 10px 1px #ccc;
+  }
 
   #flash-messages {
     .flash {
@@ -22,14 +25,22 @@ body {
   }
 
   #header {
+    width: 100%;
+    position: fixed;
     height: 60px;
-    border-bottom: 10px #EEE solid;
+    background: #45aeea;
+    background-image: linear-gradient(to bottom,#54b4eb,#2fa4e7);
 
     #logo {
       width: 150px;
       height: 100%;
       margin-right: 20px;
       float: left;
+      color: white;
+      font-size: 35px;
+      text-shadow: 1px 1px 0 rgba(0,0,0,0.3);
+      padding-top: 18px;
+      font-weight: bold;
     }
 
     #header-nav {
@@ -38,26 +49,44 @@ body {
       .header-nav-item {
         float: left;
         padding: 20px;
+        cursor: pointer;
 
         > a {
-          color: #666;
+          color: white;
           font-size: 19px;
+          text-shadow: 1px 1px 0 rgba(0,0,0,0.2);
         }
 
-        &:hover, &:active {
-          background: #0088cc;
+        &:hover, &:active, &:visited {
+          background: #1684c2;
+          height: 15px;
+          border-bottom: 5px white solid;
+          border-radius: 0px 0px 5px 5px;
+
+          .caret {
+            display: inline-block;
+          }
 
           > a {
-            color: white;
             text-decoration: none;
           }
         }
+      }
+
+      .caret {
+        border-top-color: #fff;
+        display: none;
+      }
+
+      .dropdown-menu {
+        top: 60px;
       }
     }
   }
 
   #main {
     padding: 10px;
+    min-height: 1000px;
   }
 
   #footer {

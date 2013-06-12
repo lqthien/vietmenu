@@ -4,7 +4,7 @@
 en:
   navigation:
     home:
-      home: 'Home'
+      hot: 'Hot'
       restaurants: 'Restaurants'
       dishes: 'Dishes'
       about: 'About'
