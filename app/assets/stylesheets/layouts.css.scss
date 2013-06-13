@@ -8,11 +8,9 @@ body {
 
   #header {
     width: 100%;
-    position: fixed;
-    height: 60px;
     background: #45aeea;
     background-image: linear-gradient(to bottom,#54b4eb,#2fa4e7);
-    box-shadow: 0 0px 10px 3px #45aeea;
+    box-shadow: 0 0px 10px 3px #0F5B86;
 
     #logo {
       width: 150px;
@@ -38,8 +36,15 @@ body {
         border-radius: 10px;
         transition: background 0.3s;
 
+        .icon-large {
+          line-height: 20px;
+          color: #fff;
+          transition: color 0.3s;
+        }
+
         > a {
-          color: white;
+          margin-left: 5px;
+          color: #fff;
           font-size: 19px;
           text-shadow: 1px 1px 0 rgba(0,0,0,0.2);
           transition: color 0.3s;
@@ -50,6 +55,10 @@ body {
 
           .caret {
             display: inline-block;
+          }
+
+          .icon-large {
+            color: #45aeea;
           }
 
           > a {
@@ -66,6 +75,50 @@ body {
 
       .dropdown-menu {
         top: 45px;
+
+        &:before {
+          position: absolute;
+          top: -7px;
+          left: 30px;
+          display: inline-block;
+          border-right: 7px solid transparent;
+          border-bottom: 7px solid #ccc;
+          border-left: 7px solid transparent;
+          border-bottom-color: rgba(0, 0, 0, 0.2);
+          content: '';
+        }
+
+        &:after {
+          position: absolute;
+          top: -6px;
+          left: 31px;
+          display: inline-block;
+          border-right: 6px solid transparent;
+          border-bottom: 6px solid #ffffff;
+          border-left: 6px solid transparent;
+          content: '';
+        }
+      }
+    }
+
+    .header-subnav {
+      padding: 3px;
+      height: 20px;
+      background: #0F5B86;
+      color: #CEE9F9;
+      display: none;
+      text-align: center;
+
+      .main {
+        .subnav-item {
+          margin: 0px 10px;
+          font-weight: bold;
+          display: inline-block;
+
+          > a {
+            color: #CEE9F9;
+          }
+        }
       }
     }
   }
@@ -75,7 +128,6 @@ body {
     box-shadow: 0 1px 5px 0px #ccc;
 
     #main-content {
-      margin-top: 60px;
       min-height: 600px;
 
       #flash-messages {

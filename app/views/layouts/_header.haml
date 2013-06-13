@@ -4,9 +4,15 @@
       #logo
         VietMenu
     #header-nav
-      .header-nav-item= link_to t('navigation.home.hot'), '#'
-      .header-nav-item= link_to t('navigation.home.restaurants'), '#'
-      .header-nav-item= link_to t('navigation.home.dishes'), '#'
+      .header-nav-item.has-subnav{ 'data-subnav' => '#subnav1' }
+        %i.icon-star.icon-large
+        = link_to t('navigation.home.hot'), '#'
+      .header-nav-item.has-subnav{ 'data-subnav' => '#subnav2' }
+        %i.icon-map-marker.icon-large
+        = link_to t('navigation.home.restaurants'), '#'
+      .header-nav-item.has-subnav{ 'data-subnav' => '#subnav3' }
+        %i.icon-beer.icon-large
+        = link_to t('navigation.home.dishes'), '#'
       .header-nav-item= link_to t('navigation.home.about'), '#'
       .header-nav-item.dropdown
         = link_to account_menu, '#', id: 'header-account-menu', class: 'dropdown-toggle', 'data-toggle' => "dropdown"
@@ -18,3 +24,5 @@
           - else
             %li= link_to t('navigation.home.register'), new_user_registration_path
             %li= link_to t('navigation.home.login'), new_user_session_path
+    .clearfix
+  = render partial: 'layouts/header_subnav'
