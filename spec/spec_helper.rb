@@ -4,9 +4,13 @@ require 'simplecov'
 ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
+require 'capybara'
+require 'capybara/rails'
+require 'capybara/rspec'
 require 'faker'
 require 'webmock/rspec'
 require 'vcr'
+WebMock.disable_net_connect!(:allow_localhost => true)
 
 Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 
@@ -38,4 +42,7 @@ RSpec.configure do |config|
   #     --seed 1234
   config.order = "random"
   ActionMailer::Base.delivery_method = :test
+
+  config.include Capybara::DSL
+  config.include FactoryGirl::Syntax::Methods
 end

@@ -10,9 +10,9 @@ en:
       about: 'About'
       account: 'Account'
       register: 'Register'
-      login: 'Log In'
+      sign_in: 'Sign In'
       my_account: 'My Account'
-      logout: 'Log Out'
+      sign_out: 'Sign Out'
       sub:
         hot_dishes: 'Hot dishes'
         hot_restaurants: 'Hot restaurants'
