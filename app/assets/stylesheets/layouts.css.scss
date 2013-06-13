@@ -31,38 +31,41 @@ body {
 
       .header-nav-item {
         float: left;
-        padding: 20px;
         cursor: pointer;
+        height: 25px;
+        padding: 5px 10px 3px 8px;
+        margin: 12px 15px;
+        border-radius: 10px;
+        transition: background 0.3s;
 
         > a {
           color: white;
           font-size: 19px;
           text-shadow: 1px 1px 0 rgba(0,0,0,0.2);
+          transition: color 0.3s;
         }
 
         &:hover, &:active, &:visited {
-          background: #1684c2;
-          height: 15px;
-          border-bottom: 5px white solid;
-          border-radius: 0px 0px 5px 5px;
+          background: #fff;
 
           .caret {
             display: inline-block;
           }
 
           > a {
+            color: #45aeea;
             text-decoration: none;
           }
         }
       }
 
       .caret {
-        border-top-color: #fff;
+        border-top-color: #45aeea;
         display: none;
       }
 
       .dropdown-menu {
-        top: 60px;
+        top: 45px;
       }
     }
   }
