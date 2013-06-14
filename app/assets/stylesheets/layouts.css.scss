@@ -53,10 +53,6 @@ body {
         &:hover, &:active, &:visited {
           background: #fff;
 
-          .caret {
-            display: inline-block;
-          }
-
           .icon-large {
             color: #45aeea;
           }
@@ -65,38 +61,6 @@ body {
             color: #45aeea;
             text-decoration: none;
           }
-        }
-      }
-
-      .caret {
-        border-top-color: #45aeea;
-        display: none;
-      }
-
-      .dropdown-menu {
-        top: 45px;
-
-        &:before {
-          position: absolute;
-          top: -7px;
-          left: 30px;
-          display: inline-block;
-          border-right: 7px solid transparent;
-          border-bottom: 7px solid #ccc;
-          border-left: 7px solid transparent;
-          border-bottom-color: rgba(0, 0, 0, 0.2);
-          content: '';
-        }
-
-        &:after {
-          position: absolute;
-          top: -6px;
-          left: 31px;
-          display: inline-block;
-          border-right: 6px solid transparent;
-          border-bottom: 6px solid #ffffff;
-          border-left: 6px solid transparent;
-          content: '';
         }
       }
     }
@@ -114,9 +78,21 @@ body {
           margin: 0px 10px;
           font-weight: bold;
           display: inline-block;
+          padding: 0px 5px;
+          border-radius: 3px;
+          transition: background 0.3s;
 
           > a {
             color: #CEE9F9;
+          }
+
+          &:hover {
+            background: #CEE9F9;
+
+            a {
+              text-decoration: none;
+              color: #0F5B86;
+            }
           }
         }
       }

@@ -25,3 +25,17 @@
     = '::::'
     .subnav-item
       = link_to t('navigation.home.sub.search_dishes'), '#'
+#subnav4.header-subnav
+  .main
+    - if user_signed_in?
+      .subnav-item
+        = link_to t('navigation.home.my_account'), '#'
+      = '::::'
+      .subnav-item
+        = link_to t('navigation.home.sign_out'), destroy_user_session_path
+    - else
+      .subnav-item
+        = link_to t('navigation.home.register'), new_user_registration_path
+      = '::::'
+      .subnav-item
+        = link_to t('navigation.home.sign_in'), new_user_session_path

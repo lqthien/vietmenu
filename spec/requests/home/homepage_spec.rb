@@ -15,27 +15,14 @@ describe 'Homepage', js:true do
         end
       end
 
-      describe 'Account menu' do
-        it 'should show dropdown menu when clicking on Account' do
-          within '#header' do
-            click_on 'Account'
-
-            expect(page).to have_css '.dropdown-menu', visible: true
-            within '.dropdown-menu' do
-              should_have_links [['Register', new_user_registration_path], ['Sign In', new_user_session_path]]
-            end
-          end
-        end
-      end
-
       describe 'Submenus' do
         it 'should show Hot submenus' do
           within '#header' do
-            click_on 'Dishes'
+            click_on 'Account'
             click_on 'Hot'
           end
 
-          expect(page).to have_css '#subnav3', visible: false
+          expect(page).to have_css '#subnav4', visible: false
           expect(page).to have_css '#subnav1', visible: true
           within '#subnav1' do
             should_have_links ['Hot dishes', 'Hot restaurants']
@@ -67,6 +54,19 @@ describe 'Homepage', js:true do
             should_have_links ['Search dishes', 'Browse dishes']
           end
         end
+
+        it 'should show Account submenus' do
+          within '#header' do
+            click_on 'Dishes'
+            click_on 'Account'
+          end
+
+          expect(page).to have_css '#subnav3', visible: false
+          expect(page).to have_css '#subnav4', visible: true
+          within '#subnav4' do
+            should_have_links [['Register', new_user_registration_path], ['Sign In', new_user_session_path]]
+          end
+        end
       end
     end
   end
@@ -93,8 +93,8 @@ describe 'Homepage', js:true do
         within '#header' do
           click_on 'Account'
 
-          expect(page).to have_css '.dropdown-menu', visible: true
-          within '.dropdown-menu' do
+          expect(page).to have_css '#subnav4', visible: true
+          within '#subnav4' do
             should_have_links ['My Account', ['Sign Out', destroy_user_session_path]]
           end
         end
